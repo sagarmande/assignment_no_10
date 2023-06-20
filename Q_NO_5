@@ -1,0 +1,16 @@
+def countSubstrings(S):
+    count = 0
+    previous_char_index = -1
+
+    for i, ch in enumerate(S):
+        count += 1
+
+        if i > 0 and ch == S[i - 1]:
+            count += (i - previous_char_index - 1)
+
+        previous_char_index = i
+
+    return count
+
+# Example usage:
+print(countSubstrings("abccba"))  # Output: 9
