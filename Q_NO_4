@@ -1,0 +1,11 @@
+def calculateLength(s, index):
+    if index == len(s):
+        return 0
+    
+    return 1 + calculateLength(s, index + 1)
+
+def getLength(s):
+    return calculateLength(s, 0)
+
+# Example usage:
+print(getLength("example"))  # Output: 7
