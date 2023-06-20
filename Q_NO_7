@@ -1,0 +1,20 @@
+def permute(str, start, end):
+    if start == end:
+        print(str)
+        return
+
+    for i in range(start, end + 1):
+        str = swap(str, start, i)
+        permute(str, start + 1, end)
+        str = swap(str, start, i)
+
+def swap(str, i, j):
+    str_list = list(str)
+    str_list[i], str_list[j] = str_list[j], str_list[i]
+    return ''.join(str_list)
+
+def printPermutations(str):
+    permute(str, 0, len(str) - 1)
+
+# Example usage:
+printPermutations("cd")
