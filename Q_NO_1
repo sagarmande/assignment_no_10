@@ -1,0 +1,10 @@
+import math
+
+def isPowerOfThree(n):
+    if n <= 0:
+        return False
+    logValue = math.log(n, 3)
+    return logValue.is_integer()
+
+print(isPowerOfThree(27))  # Output: True
+print(isPowerOfThree(0))   # Output: False
