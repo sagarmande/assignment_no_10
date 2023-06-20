@@ -1,0 +1,15 @@
+def towerOfHanoi(N, source, destination, intermediate):
+    if N == 1:
+        print("move disk", N, "from rod", source, "to rod", destination)
+        return 1
+
+    moves = towerOfHanoi(N - 1, source, intermediate, destination)
+    print("move disk", N, "from rod", source, "to rod", destination)
+    moves += towerOfHanoi(N - 1, intermediate, destination, source)
+
+    return moves + 1
+
+# Example usage:
+N = 2
+total_moves = towerOfHanoi(N, 1, 3, 2)
+print(total_moves)  # Output: 3
