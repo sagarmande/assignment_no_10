@@ -1,0 +1,12 @@
+def countConsonants(string):
+    consonantCount = 0
+    vowels = "aeiouAEIOU"
+
+    for ch in string:
+        if ch.isalpha() and ch not in vowels:
+            consonantCount += 1
+
+    return consonantCount
+
+# Example usage:
+print(countConsonants("Hello World"))  # Output: 7
