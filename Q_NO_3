@@ -1,0 +1,21 @@
+def generateSubsets(set, index, currentSubset):
+    if index == len(set):
+        print(currentSubset)
+        return
+    
+    generateSubsets(set, index + 1, currentSubset)  # Exclude character at index
+    generateSubsets(set, index + 1, currentSubset + set[index])  # Include character at index
+
+def printSubsets(set):
+    generateSubsets(set, 0, "")
+
+# Example usage:
+printSubsets("abc")
+
+abc
+ab
+ac
+a
+bc
+b
+c
