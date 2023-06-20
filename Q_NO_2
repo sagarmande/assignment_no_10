@@ -1,0 +1,13 @@
+def lastRemaining(n):
+    arr = list(range(1, n + 1))
+    leftToRight = True
+
+    while len(arr) > 1:
+        if leftToRight:
+            arr = arr[::2]
+        else:
+            arr = arr[-2::-2]
+        leftToRight = not leftToRight
+
+    return arr[0]
+print(lastRemaining(9))  # Output: 6
